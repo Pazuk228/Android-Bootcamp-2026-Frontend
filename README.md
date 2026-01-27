@@ -1,5 +1,7 @@
 # timexample
 
+https://www.figma.com/design/EjdjrYB0ZlD8h2a74RJznB/Untitled?node-id=0-1&t=LjHkDoRMv2xuDqRq-1
+
 # User Stories - US
 
 US1 Регистрация нового сотрудника:
