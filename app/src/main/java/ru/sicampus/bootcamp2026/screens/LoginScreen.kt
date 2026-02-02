@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -32,10 +31,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ru.sicampus.bootcamp2026.ui.theme.AppTheme
 import ru.sicampus.bootcamp2026.ui.theme.Blue
 import ru.sicampus.bootcamp2026.ui.theme.Gray
 import ru.sicampus.bootcamp2026.ui.theme.LGray
@@ -71,12 +71,9 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        PasswordField(
+        LoginPasswordField(
             value = password,
-            onValueChange = {
-                val it = ""
-                password = it
-            },
+            onValueChange = { password = it },
             label = "Пароль",
             placeholder = "Введите пароль..."
         )
@@ -146,9 +143,46 @@ fun LoginScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PasswordField(value: String, onValueChange: () -> Unit, label: String, placeholder: String) {
+fun LoginPasswordField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    label: String,
+    placeholder: String,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        Text(
+            text = label,
+            fontSize = 14.sp,
+            color = LGray,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
 
+        OutlinedTextField(
+            value = value,
+            onValueChange = onValueChange,
+            modifier = Modifier.fillMaxWidth(),
+            placeholder = {
+                Text(
+                    text = placeholder,
+                    color = LightGray
+                )
+            },
+            shape = RoundedCornerShape(12.dp),
+            colors = OutlinedTextFieldDefaults.colors(
+                focusedBorderColor = Blue,
+                unfocusedBorderColor = LGray,
+                focusedLabelColor = Blue,
+                unfocusedLabelColor = LGray,
+                focusedTextColor = Color.Black,
+                unfocusedTextColor = Color.Black
+            ),
+            singleLine = true,
+            visualTransformation = PasswordVisualTransformation()
+        )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -181,18 +215,19 @@ fun LoginField(
             shape = RoundedCornerShape(12.dp),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = Blue,
-                unfocusedBorderColor = White
+                unfocusedBorderColor = LGray
             ),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+            singleLine = true
         )
     }
 }
 @Preview(showBackground = true, name = "Экран входа")
 @Composable
 fun ShowLoginScreen() {
-    LoginScreen(
-        onLoginClick = {},
-        onRegisterClick = {}
-    )
+    AppTheme {
+        LoginScreen(
+            onLoginClick = {},
+            onRegisterClick = {}
+        )
+    }
 }
