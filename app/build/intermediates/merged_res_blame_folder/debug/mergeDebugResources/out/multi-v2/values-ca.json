@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "ru.innovationcampus.android.app-mergeDebugResources-42:/values-ca/values-ca.xml",
+            "outputFile": "ru.innovationcampus.android.app-mergeDebugResources-43:/values-ca/values-ca.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\0faa20d8ae17db6d93586da1ee3f3146\\transformed\\foundation\\res\\values-ca\\values-ca.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,172,270",
-                        "endColumns": "116,97,101",
-                        "endOffsets": "167,265,367"
-                    },
-                    "to": {
-                        "startLines": "2,97,98",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "105,10269,10367",
-                        "endColumns": "116,97,101",
-                        "endOffsets": "217,10362,10464"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\599d0daf63065240dba3b721b032cb8b\\transformed\\core-1.17.0\\res\\values-ca\\values-ca.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,253,352,449,555,660,786",
-                        "endColumns": "95,101,98,96,105,104,125,100",
-                        "endOffsets": "146,248,347,444,550,655,781,882"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10,93",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "331,427,529,628,725,831,936,9895",
-                        "endColumns": "95,101,98,96,105,104,125,100",
-                        "endOffsets": "422,524,623,720,826,931,1057,9991"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\0cb62efae4a0d91deb2646bbdba64728\\transformed\\material3\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\b9687259b90333bfe69b55e6e4fc2d2b\\transformed\\material3\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\8b37b462160756e00b19784a5e79bd52\\transformed\\ui\\res\\values-ca\\values-ca.xml",
+                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\ef3a00430e198f32ec4e2045b6e29a9d\\transformed\\foundation\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,172,270",
+                        "endColumns": "116,97,101",
+                        "endOffsets": "167,265,367"
+                    },
+                    "to": {
+                        "startLines": "2,97,98",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "105,10269,10367",
+                        "endColumns": "116,97,101",
+                        "endOffsets": "217,10362,10464"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\00a0467bc800f1ca61bd022129546193\\transformed\\core-1.17.0\\res\\values-ca\\values-ca.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,449,555,660,786",
+                        "endColumns": "95,101,98,96,105,104,125,100",
+                        "endOffsets": "146,248,347,444,550,655,781,882"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,93",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "331,427,529,628,725,831,936,9895",
+                        "endColumns": "95,101,98,96,105,104,125,100",
+                        "endOffsets": "422,524,623,720,826,931,1057,9991"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\5803ac6f47f50cfe6ebb5f13f5d05174\\transformed\\ui\\res\\values-ca\\values-ca.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

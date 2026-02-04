@@ -12,6 +12,16 @@ drawable ic_launcher_foreground
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string auth_label
+string auth_pass_label
+string auth_sign_in
+string auth_title
+string register_button
+string register_confirm_password_label
+string register_email_label
+string register_password_label
+string register_subtitle
+string register_title
 style Theme.AndroidBootcamp2026Frontend
 xml backup_rules
 xml data_extraction_rules

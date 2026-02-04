@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "ru.innovationcampus.android.app-mergeDebugResources-42:/values-v21/values-v21.xml",
+            "outputFile": "ru.innovationcampus.android.app-mergeDebugResources-43:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\599d0daf63065240dba3b721b032cb8b\\transformed\\core-1.17.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\nusha\\.gradle\\caches\\8.13\\transforms\\00a0467bc800f1ca61bd022129546193\\transformed\\core-1.17.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

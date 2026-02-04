@@ -269,6 +269,10 @@ string androidx_compose_foundation_autofill
 string androidx_compose_ui_autofill
 string androidx_startup
 string app_name
+string auth_label
+string auth_pass_label
+string auth_sign_in
+string auth_title
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -353,6 +357,12 @@ string navigation_menu
 string not_selected
 string range_end
 string range_start
+string register_button
+string register_confirm_password_label
+string register_email_label
+string register_password_label
+string register_subtitle
+string register_title
 string selected
 string snackbar_pane_title
 string state_empty

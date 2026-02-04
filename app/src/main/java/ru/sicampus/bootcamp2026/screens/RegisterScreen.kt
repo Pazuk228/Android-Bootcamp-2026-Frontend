@@ -1,6 +1,7 @@
 package ru.sicampus.bootcamp2026.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -27,22 +28,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.sicampus.bootcamp2026.ui.theme.Black
 import ru.sicampus.bootcamp2026.ui.theme.Blue
-import ru.sicampus.bootcamp2026.ui.theme.DarkBlue
+import ru.sicampus.bootcamp2026.ui.theme.Golyboi
 import ru.sicampus.bootcamp2026.ui.theme.Gray
 import ru.sicampus.bootcamp2026.ui.theme.LGray
 import ru.sicampus.bootcamp2026.ui.theme.LightGray
 import ru.sicampus.bootcamp2026.ui.theme.White
-import ru.sicampus.bootcamp2026.ui.theme.golyboi
+import ru.sicampus.bootcamp2026.ui.theme.Golyboi
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -150,7 +147,11 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Row {
+        Row (
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ){
             Text(
                 text = "Есть аккаунт? ",
                 color = LightGray,
@@ -161,9 +162,9 @@ fun RegisterScreen(
             ) {
                 Text(
                     text = "Войдите",
-                    color = golyboi,
+                    color = Golyboi,
                     fontSize = 16.sp,
-                    fontWeight = FontWeight.ExtraBold
+                    fontWeight = FontWeight.SemiBold
                 )
             }
         }
@@ -180,7 +181,6 @@ fun RegistrationField(
     label: String,
     placeholder: String,
     modifier: Modifier = Modifier,
-    containerColor: Color = LightGray
 ) {
     Column(modifier = modifier) {
         Text(

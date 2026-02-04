@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
@@ -17,9 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+
 @Composable
 fun ListScreen(
-    viewModel: ListViewModel = viewModel<ListViewModel>()
+    viewModel: ListViewModel = viewModel<ListViewModel>(),
+    navController: NavController,
 ) {
     val state by viewModel.uiState.collectAsState()
 
@@ -31,7 +36,7 @@ fun ListScreen(
 }
 
 @Composable
-private fun ListLoadingState(){
+private fun ListLoadingState() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
@@ -41,11 +46,12 @@ private fun ListLoadingState(){
         )
     }
 }
+
 @Composable
 private fun ListErrorState(
     state: ListState.Error,
     onRefresh: () -> Unit
-){
+) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
@@ -60,21 +66,22 @@ private fun ListErrorState(
                 Text("Refresh")
             }
         }
-        CircularProgressIndicator(
-            modifier = Modifier.size(48.dp)
-        )
     }
 }
 
 @Composable
 private fun ListContentState(
-    state: ListState.Content
-){
+    state: ListState.Content,
+) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
     ) {
         state.users.forEach { user ->
-            Row(modifier = Modifier.padding(vertical = 8.dp)) {
+            Row(
+                modifier = Modifier.padding(vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+
                 Column {
                     Text(user.name)
                     Text(user.email)
