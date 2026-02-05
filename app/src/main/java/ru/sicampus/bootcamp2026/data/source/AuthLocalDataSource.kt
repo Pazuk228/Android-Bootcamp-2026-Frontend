@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.map
 import ru.sicampus.bootcamp2026.ui.theme.App
 import kotlin.io.encoding.Base64
 
-object AuthLocalDataSource {
+class AuthLocalDataSource {
 
     private var isInit = false
     private var _cacheToken: String? = null
