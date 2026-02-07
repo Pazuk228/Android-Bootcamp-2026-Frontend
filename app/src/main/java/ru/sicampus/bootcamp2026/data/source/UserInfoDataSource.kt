@@ -14,11 +14,23 @@ class UserInfoDataSource {
         size: Int
     ): Result<PagingUserListDto> = withContext(Dispatchers.IO) {
         runCatching {
-            val result = Network.client.get("${Network.HOST}/api/person/paginated") {
+            val result = Network.client.get("${Network.HOST}/api/users/paginated") {
                 url {
                     parameter("page", page)
                     parameter("size", size)
                 }
+                addAuthHeader()
+            }
+            if (result.status != HttpStatusCode.OK) {
+                error("Status: ${result.status}")
+            }
+            result.body()
+        }
+    }
+
+    suspend fun getCurrentUser(): Result<UserDto> = withContext(Dispatchers.IO) {
+        runCatching {
+            val result = Network.client.get("${Network.HOST}/api/users/current") {
                 addAuthHeader()
             }
             if (result.status != HttpStatusCode.OK) {

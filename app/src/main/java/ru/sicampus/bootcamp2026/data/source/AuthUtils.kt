@@ -5,6 +5,6 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMessageBuilder
 
 suspend fun HttpMessageBuilder.addAuthHeader() {
-    val token = AuthLocalDataSource.getToken() ?: return
+    val token = AuthLocalDataSource.getTokenSuspend() ?: return
     header(HttpHeaders.Authorization, token)
 }

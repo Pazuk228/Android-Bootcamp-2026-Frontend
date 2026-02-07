@@ -8,8 +8,17 @@ class RegisterUseCase(
     suspend operator fun invoke(
         login: String,
         password: String,
-        confirmPassword: String
+        confirmPassword: String,
+        name: String,
+        lastName: String,
+        email: String,
+        phoneNumber: String
     ): Result<Unit> {
-        return repository.register(login, password, confirmPassword)
+        if (password != confirmPassword) {
+            return Result.failure(Exception("Пароли не совпадают"))
+        }
+
+        return repository.register(login, password, name, lastName, email, phoneNumber)
+            .map { Unit }
     }
 }

@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 import ru.sicampus.bootcamp2026.data.AuthRepository
 import ru.sicampus.bootcamp2026.data.source.AuthLocalDataSource
 import ru.sicampus.bootcamp2026.data.source.AuthNetworkDataSource
-import ru.sicampus.bootcamp2026.data.source.RegisterNetworkDataSource
 import ru.sicampus.bootcamp2026.domain.auth.CheckAndSaveAuthUseCase
 import ru.sicampus.bootcamp2026.domain.auth.CheckAuthFormatUseCase
 import ru.sicampus.bootcamp2026.ui.navigation.ListRoute
@@ -25,7 +24,7 @@ class AuthViewModel : ViewModel() {
             AuthRepository(
                 authNetworkDataSource = AuthNetworkDataSource(),
                 authLocalDataSource = AuthLocalDataSource(),
-                registerNetworkDataSource = RegisterNetworkDataSource()
+
             )
         )
     }
@@ -80,6 +79,5 @@ class AuthViewModel : ViewModel() {
         _uiState.update { state ->
             (state as? AuthState.Data)?.let { lambda.invoke(it) } ?: state
         }
-
     }
 }

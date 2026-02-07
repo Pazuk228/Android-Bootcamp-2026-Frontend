@@ -12,8 +12,6 @@ class UserRepository(
         page: Int,
         size: Int
     ): Result<PagingUserListEntity> {
-        //delay(2_000)
-        //if (Math.random() > 0.8) return Result.failure(IllegalStateException("Ops"))
         return userInfoDataSource.getUser(
             page = page,
             size = size,
@@ -24,8 +22,31 @@ class UserRepository(
                     UserEntity(
                         name = userDto.name ?: return@mapNotNull null,
                         email = userDto.email ?: return@mapNotNull null,
+                        id = userDto.id ?: return@mapNotNull null,
+                        lastName = userDto.lastName ?: return@mapNotNull null,
+                        login = userDto.login ?: return@mapNotNull null,
+                        phoneNumber = userDto.phoneNumber ?: return@mapNotNull null,
+                        department = userDto.department ?: return@mapNotNull null,
+                        position = userDto.position ?: return@mapNotNull null,
+                        photoUrl = userDto.photoUrl ?: return@mapNotNull null,
                     )
                 } ?: error("List is null")
+            )
+        }
+    }
+
+    suspend fun getCurrentUser(): Result<UserEntity> {
+        return userInfoDataSource.getCurrentUser().mapCatching { dto ->
+            UserEntity(
+                id = dto.id ?: 0,
+                name = dto.name ?: "",
+                lastName = dto.lastName ?: "",
+                email = dto.email ?: "",
+                login = dto.login ?: "",
+                phoneNumber = dto.phoneNumber?: "",
+                department = dto.department,
+                position = dto.position,
+                photoUrl = dto.photoUrl
             )
         }
     }
